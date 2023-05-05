@@ -1,0 +1,11 @@
+[
+    {"id":1, "nombre":"GalakCake", "precio":5500, "tamaño":"Pequeña(8 porc.)", "imagen":"./img/torta-galak.jpg"},
+    {"id":2, "nombre":"GolfeadoCake", "precio":5000, "tamaño":"Pequeña(8 porc.)", "imagen":"./img/torta-golfeados.jpg"},
+    {"id":3, "nombre":"MilhojasCake", "precio":6500, "tamaño":"Pequeña(8 porc.)", "imagen":"./img/torta-milhojas.jpg"},
+    {"id":4, "nombre":"GalakCake", "precio":6300, "tamaño":"Mediana(12 porc.)", "imagen":"./img/torta-galak.jpg"},
+    {"id":5, "nombre":"GolfeadosCake", "precio":6000, "tamaño":"Mediana(12 porc.)", "imagen":"./img/torta-golfeados.jpg"},
+    {"id":6, "nombre":"MilhojasCake", "precio":7500, "tamaño":"Mediana(12 porc.)", "imagen":"./img/torta-milhojas.jpg"},
+    {"id":7, "nombre":"GalakCake", "precio":7300, "tamaño":"Grande(18 porc.)", "imagen":"./img/torta-galak.jpg"},
+    {"id":8, "nombre":"GolfeadosCake", "precio":7000, "tamaño":"Grande(18 porc.)", "imagen":"./img/torta-golfeados.jpg"},
+    {"id":9, "nombre":"MilhojasCake", "precio":8500, "tamaño":"Grande(18 porc.)", "imagen":"./img/torta-milhojas.jpg"}
+]

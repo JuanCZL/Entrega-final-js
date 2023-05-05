@@ -1,14 +1,11 @@
-const productos = [
-    {id:1, nombre:"GalakCake", precio:5500, tamaño:"Pequeña(8 porc.)", imagen:"./img/torta-galak.jpg"},
-    {id:2, nombre:"GolfeadoCake", precio:5000, tamaño:"Pequeña(8 porc.)", imagen:"./img/torta-golfeados.jpg"},
-    {id:3, nombre:"MilhojasCake", precio:6500, tamaño:"Pequeña(8 porc.)", imagen:"./img/torta-milhojas.jpg"},
-    {id:4, nombre:"GalakCake", precio:6300, tamaño:"Mediana(12 porc.)", imagen:"./img/torta-galak.jpg"},
-    {id:5, nombre:"GolfeadosCake", precio:6000, tamaño:"Mediana(12 porc.)", imagen:"./img/torta-golfeados.jpg"},
-    {id:6, nombre:"MilhojasCake", precio:7500, tamaño:"Mediana(12 porc.)", imagen:"./img/torta-milhojas.jpg"},
-    {id:7, nombre:"GalakCake", precio:7300, tamaño:"Grande(18 porc.)", imagen:"./img/torta-galak.jpg"},
-    {id:8, nombre:"GolfeadosCake", precio:7000, tamaño:"Grande(18 porc.)", imagen:"./img/torta-golfeados.jpg"},
-    {id:9, nombre:"MilhojasCake", precio:8500, tamaño:"Grande(18 porc.)", imagen:"./img/torta-milhojas.jpg"},
-];
+let productos = [];
+
+fetch("./productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 let botonesAgregar = document.querySelectorAll(".btn-a");
@@ -34,8 +31,6 @@ function cargarProductos(){
     actualizarBotonesAgregar();
 }
 
-cargarProductos();
-
 function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".btn-a");
 
@@ -56,6 +51,28 @@ if(productosEnCarritoLS){
 }
 
 function agregarAlCarrito(e) {
+
+    Toastify({
+        text: "Producto Agregado",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #202E53, #E6E6E6)",
+          borderRadius: "2rem",
+          texTransform: "uppercase",
+          fontSize: "0.95rem",
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem', // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id == idBoton);
 
